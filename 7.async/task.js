@@ -32,7 +32,7 @@ class AlarmClock {
 
 	getCurrentFormattedTime() {
 		let date = new Date();
-		
+
 		let HH = date.getHours();
 		(HH < 10) ? HH = '0' + HH : '';
 
@@ -48,7 +48,7 @@ class AlarmClock {
 
 		this.intervalId = setInterval(() => {
 			this.alarmCollection.forEach(element => {
-				let timeNow = this.getCurrentFormattedTime;
+				let timeNow = this.getCurrentFormattedTime();
 				if (element.time === timeNow && element.canCall === true) {
 					element.canCall = false;
 					element.callback();
